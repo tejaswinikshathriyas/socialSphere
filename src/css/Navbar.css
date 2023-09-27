@@ -1,0 +1,41 @@
+.navbar-cnt{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--primary);
+    color: var(--light) !important;
+}
+
+.navbar-light .navbar-brand{
+    color: var(--light);
+}
+
+.navbar-toggler:focus{
+    box-shadow: unset;
+}
+
+.navbar-light .navbar-toggler{
+    border: none;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
+    color: var(--light);
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
+    color: var(--light);
+    transition: all 0.5s;
+}
+
+.nav-item:hover{
+    translate: 0 -5px;
+    transition: 0.5s;
+}
+
+.nav-link, .nav-link:hover{
+    color: var(--light);
+}
+
+.nav-link:focus, .nav-link:hover{
+    color: var(--light);
+}

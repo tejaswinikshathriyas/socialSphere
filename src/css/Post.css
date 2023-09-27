@@ -1,0 +1,28 @@
+body{
+    width:100dvw;
+}
+.post{
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #dedede;
+    border-radius: 10px;
+    display: flex;
+    width: 50%;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.card_img_side{
+    width: 175px;
+    height: 175px;
+}
+.card_body{
+    margin-left: 30px;
+}
+.edit-delete-button{
+    border-radius:5px ;
+    margin: 5px;
+}
+/* .card_time{
+    position: absolute;
+    bottom: 10px;
+} */
