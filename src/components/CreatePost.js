@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar';
 import axios from "axios";
 import '../css/FormStyle.css'
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
 function CreatePost() {
@@ -21,7 +19,7 @@ function CreatePost() {
         if (event.target.type === "file") {
             setPost({ ...post, "postPath": event.target.files[0] });
             setImg(event.target.files[0])
-            //handleChangeImage(event.target.files[0]);
+           
         } else {
             setPost({ ...post, [name]: value })
         }

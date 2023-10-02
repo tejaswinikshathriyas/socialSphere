@@ -25,13 +25,13 @@ function MyPosts() {
 
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             {
                 localStorage.getItem("user") ?
                     <>
                         {
                             (mypostlist.length > 0) ?
-                                <div className='bg pt'>
+                                <div className='bg pt mypost-cnt'>
                                     {
                                         mypostlist.map(eachpost => <Post key={eachpost.postId} post={eachpost} getPosts = {getPosts} />)
                                     }

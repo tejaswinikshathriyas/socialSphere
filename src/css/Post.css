@@ -1,26 +1,116 @@
-body{
-    width:100dvw;
-}
+/* body{
+    width:100vw;
+} */
+
 .post{
     margin: auto;
     padding: 20px;
-    border: 2px solid #dedede;
-    border-radius: 10px;
+    /* border: 2px solid var(--secondaryLight); */
+    /* border-radius: 10px; */
     display: flex;
-    width: 50%;
+    /* width: 50%; */
     background-color: white;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 6px;
 }
 .card_img_side{
-    width: 175px;
-    height: 175px;
+    width: 100%;
+    height: 250px;
+    flex-basis: 100%;
 }
 .card_body{
-    margin-left: 30px;
+    /* margin-left: 30px; */
+    flex-basis: 75%;
 }
+
 .edit-delete-button{
     border-radius:5px ;
     margin: 5px;
+}
+
+.posted-profile-pic{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.prof-cnt{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.user-cnt{
+    display: flex;
+}
+
+.mypost-cnt{
+    width: 50%;
+    margin: auto;
+}
+
+.card_description{
+    margin-top: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+}
+
+.post-icons{
+    margin: 5px;
+}
+
+.activity-cnt{
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+}
+
+.activity-items{
+margin-right:15px ;
+display: flex;
+    align-items: center;
+}
+
+.comment-div{
+    position: relative;
+    margin-top: 10px;
+}
+
+.comment-area{
+    border: none;
+    border-bottom: 1px solid var(--secondaryDark);
+    font-size: small;
+    width: 100%;
+    border-radius: 2px;
+    outline: none;
+}
+
+.comment-area::placeholder{
+    color: var(--secondaryDark);
+    
+}
+
+.comment-btn{
+    padding: 3px;
+    margin: 2px;
+    position: absolute;
+    right: 0px;
+    bottom: 2px;
+}
+
+.edit-img{
+    width: 150px;
+    height: 130px;
+    margin: 10px;
 }
 /* .card_time{
     position: absolute;

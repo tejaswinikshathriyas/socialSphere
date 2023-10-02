@@ -1,5 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHippo } from "@fortawesome/free-solid-svg-icons";
 
 import Login from "./components/Login";
 import Router from './components/Router';

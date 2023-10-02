@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +14,7 @@ const Login = () => {
 
     useEffect(() => {
         if (localStorage.getItem("user")) {
-           navigate("/home");
+            navigate("/home");
         }
     }, [])
 
@@ -56,8 +56,12 @@ const Login = () => {
         axios.post(`https://localhost:7294/api/User/InsertUser?username=${formData.username}&password=${formData.password}`)
             .then(response => {
                 let status = response.data;
-                if (status === 201) {
+                if (response.data.userName==formData.username) {
                     alert("user created");
+                    debugger;
+                    localStorage.setItem("user", response.data.userName);
+                    localStorage.setItem("userId", response.data.userId);
+                    navigate("/profileForm")
                 }
                 else {
                     alert(" username already exists");
@@ -76,7 +80,7 @@ const Login = () => {
 
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className='login-parent'>
                 <div className="login-container">
                     <h2>Login</h2>

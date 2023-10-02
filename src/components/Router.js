@@ -7,12 +7,14 @@ import Profile from './Profile'
 import CreatePost from './CreatePost'
 import MyPosts from './MyPosts'
 import EditPost from './EditPost'
+import ProfileForm from './ProfileForm'
 
 
 const Router = () => {
   
   return (
     <BrowserRouter>
+        <Navbar />
         <Routes>
             {/* create route to login after design welcome page */}
             {/* <Route exact path='/login' element={<Login />} /> */}
@@ -22,6 +24,7 @@ const Router = () => {
             <Route exact path='/myPost' element={<MyPosts />} />
             <Route exact path='/createPost' element={<CreatePost />} />
             <Route exact path='/editPost' element={<EditPost />} />
+            <Route exact path='/profileForm' element={<ProfileForm />} />
         </Routes>
     </BrowserRouter>
   )

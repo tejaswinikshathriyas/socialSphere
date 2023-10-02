@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react';
-import { useState , useForceUpdate } from 'react';
+import { useState, useForceUpdate } from 'react';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -9,7 +9,8 @@ import Navbar from './Navbar';
 function EditPost(props) {
 
     const [post, setPost] = useState({ title: '', description: '', postPath: "", userId: 0 });
-    const location = useLocation();
+    const location = useLocation()
+    const [previmg , setPrevimg] = useState(null)
     console.log("this is state ", location.state);
 
     const navigate = useNavigate();
@@ -19,11 +20,30 @@ function EditPost(props) {
         setPost(location.state)
     }, [])
 
+    const handleChangeImage = async (file) => {
+
+        const data = new FormData();
+        data.append("file", file)
+        data.append("upload_preset", "socialSphere")
+        data.append("cloud_name", "dl77yavd9")
+
+        const imgData = await fetch("https://api.cloudinary.com/v1_1/dl77yavd9/image/upload", {
+            method: 'POST',
+            body: data
+        })
+        const imgRes = await imgData.json();
+
+        console.log("imgRes", imgRes.url);
+        setPost({...post , postPath:imgRes.url})
+       
+    }
 
     const handleChange = (event) => {
         const { name, value } = event.target;
         if (event.target.type === "file") {
-            setPost({ ...post, "postPath": event.target.files[0] })
+            // setPost({ ...post, "postPath": event.target.files[0] })
+            handleChangeImage(event.target.files[0]);
+
         } else {
             setPost({ ...post, [name]: value })
         }
@@ -65,7 +85,10 @@ function EditPost(props) {
                                 <label htmlFor="fileInput" className="form-label">Edit your picture here</label>
                                 <input type="file" className="form-control" name="postPicture" fileName={post?.postPath} onChange={handleChange} id="fileInput" aria-describedby="fileInput" />
                             </div>
-                            
+                            <div>
+                                <p>Preview image</p>
+                                <img className="edit-img" src={post?.postPath} alt='not uploaded' />
+                            </div>
                             <div>
                                 <button className='btn primary-button' onClick={handleEdit}>Edit Post</button>
                             </div>
